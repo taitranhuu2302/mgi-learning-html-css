@@ -57,7 +57,6 @@
 .wrapper__header .header .header__nav ul {
   display: none;
   list-style: none;
-  padding: 0;
   gap: 20px;
   transition: all 0.4s;
   align-items: center;
@@ -103,7 +102,7 @@
 }
 .wrapper__header .header .nav-mobile ul {
   list-style: none;
-  padding: 0;
+  padding: 0 20px;
 }
 .wrapper__header .header .nav-mobile ul li {
   padding: 5px 0;
