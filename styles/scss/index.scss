@@ -93,6 +93,15 @@
       }
     }
 
+    #checkbox-nav {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    #checkbox-nav:checked ~ .nav-mobile {
+      max-height: 100vh;
+    }
+
     #btn-nav {
       cursor: pointer;
       i {
@@ -121,7 +130,6 @@
       ul {
         list-style: none;
         padding: 0 20px;
-
 
         li {
           padding: 5px 0;
@@ -497,48 +505,109 @@
   }
 
   .main__testimonial {
-    padding: 80px 30px 0;
+    padding: 80px 30px;
     position: relative;
 
     .swiper {
-      height: 500px;
       margin-top: 40px;
-      padding-top: 140px;
+      position: relative;
+      height: 350px;
+      overflow: hidden;
 
-      .slide__content {
-        .slide__text {
-          color: $secondary-color;
-          text-align: center;
-          font-size: 18px;
-          max-width: 650px;
-          margin: 0 auto;
-        }
+      input[name="r"] {
+        position: absolute;
+        visibility: hidden;
+      }
 
-        .slide__author {
-          text-align: center;
-          margin-top: 40px;
+      .d1,
+      .d2,
+      .d3 {
+        opacity: 0.5;
+      }
 
-          i {
-            font-size: 30px;
-            color: $primary-color;
-          }
+      #r1:checked ~ .swiper__pagination .d1 {
+        border: 4px solid $primary-color;
+        opacity: 1;
+      }
 
-          .author__name {
-            font-size: 18px;
-            margin: 10px 0;
-            font-weight: bold;
+      #r2:checked ~ .swiper__pagination .d2 {
+        border: 4px solid $primary-color;
+        opacity: 1;
+      }
+
+      #r3:checked ~ .swiper__pagination .d3 {
+        border: 4px solid $primary-color;
+        opacity: 1;
+      }
+
+      #r1:checked ~ .swiper-wrapper .slide1 {
+        margin-left: 0;
+        $slide: 1;
+      }
+
+      #r2:checked ~ .swiper-wrapper .slide1 {
+        margin-left: -33.333333%;
+        $slide: 2;
+      }
+
+      #r3:checked ~ .swiper-wrapper .slide1 {
+        margin-left: -66.666666%;
+        $slide: 3;
+      }
+
+      .swiper-wrapper {
+        position: absolute;
+        overflow: hidden;
+        display: flex;
+        width: 300%;
+
+        .swiper-slide {
+          min-width: 33.333333%;
+          transition: all 0.4s;
+          .slide__content {
+            .slide__text {
+              color: $secondary-color;
+              text-align: center;
+              font-size: 18px;
+              max-width: 650px;
+              margin: 0 auto;
+            }
+
+            .slide__author {
+              text-align: center;
+              margin-top: 40px;
+
+              i {
+                font-size: 30px;
+                color: $primary-color;
+              }
+
+              .author__name {
+                font-size: 18px;
+                margin: 10px 0;
+                font-weight: bold;
+              }
+            }
           }
         }
       }
 
-      .swiper-pagination {
-        top: 0;
+      .swiper__pagination {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 40px;
 
-        .pagination__item {
+        .pagination__dot {
           width: 80px;
           height: 80px;
           border-radius: 9999px;
           overflow: hidden;
+          cursor: pointer;
+
+          &.active {
+            border: 4px solid $primary-color;
+          }
 
           img {
             width: 100%;
@@ -546,34 +615,38 @@
             object-fit: cover;
           }
         }
-
-        .swiper-pagination-bullet-active {
-          border: 4px solid $primary-color;
-        }
       }
 
       .swiper-button-prev,
       .swiper-button-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
         background: $primary-color;
         width: 40px;
+        cursor: pointer;
         height: 40px;
         border-radius: 999px;
-
-        &::after {
-          font-size: 16px;
-          color: white;
-        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 16px;
       }
 
       .swiper-button-prev {
-        &::after {
-          margin-right: 1px;
+        left: 0;
+        @media (min-width: $xl) {
+          left: 150px;
         }
       }
 
       .swiper-button-next {
-        &::after {
-          margin-left: 2px;
+        right: 0;
+        @media (min-width: $xl) {
+          @media (min-width: $xl) {
+            right: 150px;
+          }
         }
       }
     }

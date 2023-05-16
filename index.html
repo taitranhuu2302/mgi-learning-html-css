@@ -16,34 +16,39 @@
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.0.10/css/all.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
     <link rel="stylesheet" href="./styles/css/base.css" />
     <link rel="stylesheet" href="./styles/css/index.css" />
   </head>
   <body>
     <div id="wrapper">
-      <header id="Header" class="wrapper__header">
+      <header id="Header" class="wrapper__header sticky">
         <div class="header container">
-          <img class="header__logo header__logo--dark" src="./images/logo-dark.png" alt="" />
-          <img class="header__logo header__logo--light" src="./images/logo-light.png" alt="" />
+          <img
+            class="header__logo header__logo--dark"
+            src="./images/logo-dark.png"
+            alt=""
+          />
+          <img
+            class="header__logo header__logo--light"
+            src="./images/logo-light.png"
+            alt=""
+          />
           <div class="header__nav">
             <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#Service">Service</a></li>
-                <li><a href="#Process">Process</a></li>
-                <li><a href="#Testimonial">Testimonial</a></li>
-                <li><a href="#Portfolio">Portfolio</a></li>
-                <li><a href="#Pricing">Pricing</a></li>
-                <li><a href="#Blog">Blog</a></li>
-                <li><a href="#Contact">Contact</a></li>
-              </ul>
-            <button id="btn-nav">
-              <i class="far fa-bars"></i>
-            </button>
+              <li><a href="#Home">Home</a></li>
+              <li><a href="#Service">Service</a></li>
+              <li><a href="#Process">Process</a></li>
+              <li><a href="#Testimonial">Testimonial</a></li>
+              <li><a href="#Portfolio">Portfolio</a></li>
+              <li><a href="#Pricing">Pricing</a></li>
+              <li><a href="#Blog">Blog</a></li>
+              <li><a href="#Contact">Contact</a></li>
+            </ul>
           </div>
+          <label for="checkbox-nav" id="btn-nav">
+            <i class="far fa-bars"></i>
+          </label>
+          <input id="checkbox-nav" type="checkbox">
           <div class="nav-mobile">
             <div class="container">
               <ul>
@@ -370,8 +375,31 @@
             </p>
 
             <div class="swiper">
+              <input type="radio" name="r" checked id="r1" />
+              <input type="radio" name="r" id="r2" />
+              <input type="radio" name="r" id="r3" />
+              <div class="swiper__pagination">
+                <label for="r1" class="pagination__dot d1">
+                  <img
+                    src="https://themesdesign.in/zoric/layout/images/users/img-5.jpg"
+                    alt=""
+                  />
+                </label>
+                <label for="r2" class="pagination__dot d2">
+                  <img
+                    src="https://themesdesign.in/zoric/layout/images/users/img-6.jpg"
+                    alt=""
+                  />
+                </label>
+                <label for="r3" class="pagination__dot d3">
+                  <img
+                    src="https://themesdesign.in/zoric/layout/images/users/img-7.jpg"
+                    alt=""
+                  />
+                </label>
+              </div>
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide slide1">
                   <div class="slide__content">
                     <p class="slide__text">
                       " Very well thought out and articulate communication.
@@ -417,10 +445,13 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
 
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="swiper-button-next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -1026,7 +1057,6 @@
         </div>
       </footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="./js/main.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
   </body>
 </html>
